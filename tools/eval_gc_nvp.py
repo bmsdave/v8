@@ -5,11 +5,13 @@
 # found in the LICENSE file.
 
 """This script is used to analyze GCTracer's NVP output."""
+from __future__ import print_function
+from __future__ import absolute_import
 
 
 from argparse import ArgumentParser
 from copy import deepcopy
-from gc_nvp_common import split_nvp
+from .gc_nvp_common import split_nvp
 from math import ceil,log
 from sys import stdin
 

@@ -34,6 +34,7 @@
 import os, re
 import optparse
 import textwrap
+from functools import reduce
 
 
 class Error(Exception):

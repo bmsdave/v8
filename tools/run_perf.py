@@ -98,6 +98,8 @@ Path pieces are concatenated. D8 is always run with the suite's path as cwd.
 
 The test flags are passed to the js test file after '--'.
 """
+from __future__ import print_function
+from __future__ import absolute_import
 
 from collections import OrderedDict
 import json
@@ -110,9 +112,10 @@ import subprocess
 import sys
 import traceback
 
-from testrunner.local import android
-from testrunner.local import command
-from testrunner.local import utils
+from .testrunner.local import android
+from .testrunner.local import command
+from .testrunner.local import utils
+from functools import reduce
 
 ARCH_GUESS = utils.DefaultArch()
 SUPPORTED_ARCHS = ["arm",
@@ -1092,12 +1095,12 @@ def Main(args):
     if options.json_test_results:
       results.WriteToFile(options.json_test_results)
     else:  # pragma: no cover
-      print results
+      print(results)
 
   if options.json_test_results_secondary:
     results_secondary.WriteToFile(options.json_test_results_secondary)
   else:  # pragma: no cover
-    print results_secondary
+    print(results_secondary)
 
   if results.errors or have_failed_tests[0]:
     return 1

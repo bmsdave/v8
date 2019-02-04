@@ -35,6 +35,7 @@
 # and output special error string in case of non-zero exit code.
 # Then we parse the output of 'adb shell' and look for that error string.
 
+from __future__ import print_function
 import os
 from os.path import join, dirname, abspath
 import subprocess

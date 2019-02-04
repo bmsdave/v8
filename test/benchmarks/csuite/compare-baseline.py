@@ -9,6 +9,7 @@ more baselines. You can either pipe the result of the benchmark
 runner directly into this script or specify the results file with
 the -f option.
 '''
+from __future__ import print_function
 
 import csv
 import math
