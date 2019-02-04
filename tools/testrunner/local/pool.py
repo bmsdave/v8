@@ -6,7 +6,7 @@
 # for py2/py3 compatibility
 from __future__ import print_function
 
-from queue import *
+from Queue import Empty
 from contextlib import contextmanager
 import os
 import signal
