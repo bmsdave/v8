@@ -7,6 +7,7 @@
   Consult --help for more information.
 """
 
+from __future__ import print_function
 import argparse
 import json
 import os

@@ -32,6 +32,7 @@ import os
 import subprocess
 import time
 
+import gdb
 
 kSmiTag = 0
 kSmiTagSize = 1

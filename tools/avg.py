@@ -22,6 +22,7 @@ will output
   [10/10] [default]              : avg  22,885.80 stddev   1,941.80 ( 17,584.00 -  24,266.00) Kps
 """
 
+from __future__ import print_function
 import argparse
 import math
 import re
