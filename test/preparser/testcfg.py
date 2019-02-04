@@ -27,6 +27,7 @@
 
 
 import os
+from past.builtins import execfile
 
 from testrunner.local import testsuite
 from testrunner.objects import testcase

@@ -11,6 +11,7 @@ for sets of canned configurations and analyze them.
 """
 
 from __future__ import print_function
+from past.builtins import cmp
 
 import argparse
 import ast

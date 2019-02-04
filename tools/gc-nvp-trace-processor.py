@@ -40,6 +40,8 @@
 from __future__ import with_statement
 from __future__ import print_function
 from __future__ import absolute_import
+from past.builtins import long
+
 import sys, types, subprocess, math
 from . import gc_nvp_common
 from functools import reduce

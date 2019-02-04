@@ -100,6 +100,7 @@ The test flags are passed to the js test file after '--'.
 """
 from __future__ import print_function
 from __future__ import absolute_import
+from past.builtins import basestring
 
 from collections import OrderedDict
 import json

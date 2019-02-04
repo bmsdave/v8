@@ -624,7 +624,7 @@ def emit_set(out, consts):
 # Emit the whole output file.
 #
 def emit_config():
-        out = file(sys.argv[1], 'w');
+        out = open(sys.argv[1], 'w');
 
         out.write(header);
 
