@@ -10,7 +10,7 @@ For simplicity, we check all pyl files on any changes in this folder.
 
 import ast
 import os
-
+from past.builtins import basestring
 
 SUPPORTED_BUILDER_SPEC_KEYS = [
   'swarming_dimensions',

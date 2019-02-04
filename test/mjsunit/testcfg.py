@@ -29,6 +29,7 @@ from collections import OrderedDict
 import itertools
 import os
 import re
+from past.builtins import basestring
 
 from testrunner.local import statusfile
 from testrunner.local import testsuite
