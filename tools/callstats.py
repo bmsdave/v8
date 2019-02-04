@@ -16,6 +16,8 @@ Commands:
 
 For each command, you can try ./runtime-call-stats.py help command.
 '''
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import argparse
@@ -26,7 +28,6 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import operator
 
 import numpy
 import scipy

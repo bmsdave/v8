@@ -12,6 +12,8 @@ All these .cc files are then added to a sources.gni file which is included in
 BUILD.gn. Just compile to check whether there are any violations to the rule
 that each header must be includable in isolation.
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import argparse

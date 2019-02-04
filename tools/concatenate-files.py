@@ -35,7 +35,9 @@
 # on all supported build platforms, but Python is, and hence this provides
 # us with an easy and uniform way of doing this on all platforms.
 
+# for py2/py3 compatibility
 from __future__ import print_function
+
 import optparse
 
 

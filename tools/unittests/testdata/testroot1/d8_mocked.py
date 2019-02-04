@@ -5,6 +5,8 @@
 """
 Dummy d8 replacement. Just passes all test, except if 'berries' is in args.
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import sys

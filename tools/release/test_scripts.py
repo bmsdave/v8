@@ -26,9 +26,9 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# for py2/py3 compatibility
 from __future__ import print_function
-import os
-import shutil
+
 import tempfile
 import traceback
 import unittest
@@ -36,16 +36,10 @@ import unittest
 import auto_push
 from auto_push import LastReleaseBailout
 import auto_roll
-import common_includes
-from common_includes import *
-import create_release
 from create_release import CreateRelease
-import merge_to_branch
+
 from merge_to_branch import MergeToBranch
-import push_to_candidates
 from push_to_candidates import *
-from auto_tag import AutoTag
-import roll_merge
 from roll_merge import RollMerge
 
 TEST_CONFIG = {

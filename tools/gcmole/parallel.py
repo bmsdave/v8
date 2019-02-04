@@ -19,6 +19,8 @@ ______________ file2
 <output of clang --opt file2>
 ______________ finish <exit code of clang --opt file2> ______________
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import itertools

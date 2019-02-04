@@ -7,6 +7,8 @@ python %prog -c <command> [options]
 Local benchmark runner.
 The -c option is mandatory.
 '''
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import math

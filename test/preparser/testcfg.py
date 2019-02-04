@@ -25,9 +25,10 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# for py2/py3 compatibility
+from past.builtins import execfile
 
 import os
-from past.builtins import execfile
 
 from testrunner.local import testsuite
 from testrunner.objects import testcase

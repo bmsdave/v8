@@ -98,6 +98,8 @@ Path pieces are concatenated. D8 is always run with the suite's path as cwd.
 
 The test flags are passed to the js test file after '--'.
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 from __future__ import absolute_import
 from past.builtins import basestring

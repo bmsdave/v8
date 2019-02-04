@@ -25,13 +25,14 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# for py2/py3 compatibility
+from past.builtins import basestring
+
 from collections import OrderedDict
 import itertools
 import os
 import re
-from past.builtins import basestring
 
-from testrunner.local import statusfile
 from testrunner.local import testsuite
 from testrunner.objects import testcase
 from testrunner.outproc import base as outproc

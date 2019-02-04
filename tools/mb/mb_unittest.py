@@ -8,7 +8,6 @@
 
 import json
 import StringIO
-import os
 import sys
 import unittest
 

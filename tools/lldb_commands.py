@@ -1,4 +1,3 @@
-from __future__ import print_function
 # Copyright 2017 the V8 project authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -6,7 +5,9 @@ from __future__ import print_function
 # Load this file by adding this to your ~/.lldbinit:
 # command script import <this_dir>/lldb_commands.py
 
-import lldb
+# for py2/py3 compatibility
+from __future__ import print_function
+
 import re
 
 #####################

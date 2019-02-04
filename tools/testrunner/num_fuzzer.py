@@ -4,9 +4,10 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-
+# for py2/py3 compatibility
 from __future__ import print_function
 from __future__ import absolute_import
+
 import random
 import sys
 
@@ -16,13 +17,11 @@ from . import base_runner
 from testrunner.local import utils
 
 from testrunner.testproc import fuzzer
-from testrunner.testproc.base import TestProcProducer
 from testrunner.testproc.combiner import CombinerProc
 from testrunner.testproc.execution import ExecutionProc
 from testrunner.testproc.expectation import ForgiveTimeoutProc
 from testrunner.testproc.filter import StatusFileFilterProc, NameFilterProc
 from testrunner.testproc.loader import LoadProc
-from testrunner.testproc.progress import ResultsTracker
 from testrunner.utils import random_utils
 
 

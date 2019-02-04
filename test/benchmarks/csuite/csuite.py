@@ -30,6 +30,8 @@ You can run from any place:
   ../../somewhere-strange/csuite.py sunspider baseline ./d8
   ../../somewhere-strange/csuite.py sunspider compare ./d8-better
 '''
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import os

@@ -10,6 +10,8 @@ Examples:
   %prog -t "ia32 results" Result,../result.json Master,/path-to/master.json -o results.html
   %prog -t "x64 results" ../result.json master.json -o results.html
 '''
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 from collections import OrderedDict
@@ -17,9 +19,7 @@ import json
 import math
 from argparse import ArgumentParser
 import os
-import shutil
 import sys
-import tempfile
 
 PERCENT_CONSIDERED_SIGNIFICANT = 0.5
 PROBABILITY_CONSIDERED_SIGNIFICANT = 0.02

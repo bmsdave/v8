@@ -9,6 +9,8 @@ more baselines. You can either pipe the result of the benchmark
 runner directly into this script or specify the results file with
 the -f option.
 '''
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import csv

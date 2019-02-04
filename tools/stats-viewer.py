@@ -33,6 +33,8 @@
 The stats viewer reads counters from a binary file and displays them
 in a window, re-reading and re-displaying with regular intervals.
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import mmap

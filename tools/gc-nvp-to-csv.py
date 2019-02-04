@@ -11,8 +11,10 @@
 # Usage: gc-nvp-to-csv.py <GC-trace-filename>
 #
 
+# for py2/py3 compatibility
 from __future__ import print_function
 from __future__ import absolute_import
+
 import sys
 from . import gc_nvp_common
 

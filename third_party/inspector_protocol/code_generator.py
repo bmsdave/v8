@@ -10,6 +10,7 @@ import collections
 import functools
 import re
 import copy
+
 try:
     import json
 except ImportError:

@@ -27,6 +27,8 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 """Outputs host CPU architecture in format recognized by gyp."""
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import platform

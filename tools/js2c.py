@@ -31,10 +31,12 @@
 # char arrays. It is used for embedded JavaScript code in the V8
 # library.
 
+# for py2/py3 compatibility
+from functools import reduce
+
 import os, re
 import optparse
 import textwrap
-from functools import reduce
 
 
 class Error(Exception):

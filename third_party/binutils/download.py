@@ -9,10 +9,10 @@
 TODO(mithro): Replace with generic download_and_extract tool.
 """
 
+# for py2/py3 compatibility
 from __future__ import print_function
+
 import os
-import platform
-import re
 import shutil
 import subprocess
 import sys

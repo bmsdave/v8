@@ -9,11 +9,12 @@ dump_build_config.py path/to/file.json [key1=value1 ...]
 
 Raw gyp values are supported - they will be tranformed into valid json.
 """
-from __future__ import print_function
 # TODO(machenbach): Remove this when gyp is deprecated.
 
+# for py2/py3 compatibility
+from __future__ import print_function
+
 import json
-import os
 import sys
 
 assert len(sys.argv) > 2

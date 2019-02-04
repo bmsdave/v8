@@ -6,6 +6,8 @@
 """
 Fake results processor for testing that just sums some things up.
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import fileinput

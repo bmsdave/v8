@@ -22,14 +22,14 @@ Optional flags:
   --commit      Create commit with the updated V8 in the Node.js checkout.
   --with-patch  Also include currently staged files in the V8 checkout.
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import argparse
 import os
-import shutil
 import subprocess
 import sys
-import stat
 import node_common
 
 TARGET_SUBDIR = os.path.join("deps", "v8")

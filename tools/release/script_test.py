@@ -29,7 +29,9 @@
 # Wraps test execution with a coverage analysis. To get the best speed, the
 # native python coverage version >= 3.7.1 should be installed.
 
+# for py2/py3 compatibility
 from __future__ import print_function
+
 import coverage
 import os
 import unittest

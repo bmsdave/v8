@@ -13,6 +13,8 @@ predictable_wrapper.py path/to/d8 --test --predictable --flag1 --flag2
 The command is run up to three times and the printed allocation hash is
 compared. Differences are reported as errors.
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 from __future__ import absolute_import
 

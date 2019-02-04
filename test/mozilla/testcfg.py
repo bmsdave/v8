@@ -25,13 +25,14 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# for py2/py3 compatibility
+from functools import reduce
 
 import os
 
 from testrunner.local import testsuite
 from testrunner.objects import testcase
 from testrunner.outproc import mozilla
-from functools import reduce
 
 EXCLUDED = ["CVS", ".svn"]
 

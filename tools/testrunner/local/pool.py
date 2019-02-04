@@ -3,13 +3,13 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+# for py2/py3 compatibility
 from __future__ import print_function
+
 from Queue import Empty
 from contextlib import contextmanager
-from multiprocessing import Process, Queue
 import os
 import signal
-import time
 import traceback
 
 from . import command

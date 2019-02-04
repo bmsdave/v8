@@ -6,7 +6,9 @@
 # This script executes dumpcpp.js, collects all dumped C++ symbols,
 # and merges them back into v8 log.
 
+# for py2/py3 compatibility
 from __future__ import print_function
+
 import os
 import platform
 import re

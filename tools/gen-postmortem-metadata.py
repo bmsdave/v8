@@ -46,7 +46,9 @@
 # the generated libv8 binary.
 #
 
+# for py2/py3 compatibility
 from __future__ import print_function
+
 import re
 import sys
 

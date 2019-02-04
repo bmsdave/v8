@@ -29,8 +29,10 @@
 
 # flake8: noqa  # https://bugs.chromium.org/p/v8/issues/detail?id=8784
 
+# for py2/py3 compatibility
 from __future__ import print_function
 from __future__ import absolute_import
+
 import BaseHTTPServer
 import bisect
 import cgi

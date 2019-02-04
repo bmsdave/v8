@@ -6,11 +6,12 @@
 """
 V8 correctness fuzzer launcher script.
 """
+
+# for py2/py3 compatibility
 from __future__ import print_function
 
 import argparse
 import hashlib
-import itertools
 import json
 import os
 import random

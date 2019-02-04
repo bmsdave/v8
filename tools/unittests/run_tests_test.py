@@ -9,7 +9,6 @@ Global system tests for V8 test runners and fuzzers.
 This hooks up the framework under tools/testrunner testing high-level scenarios
 with different test suite extensions and build configurations.
 """
-from __future__ import print_function
 
 # TODO(machenbach): Mock out util.GuessOS to make these tests really platform
 # independent.
@@ -18,12 +17,14 @@ from __future__ import print_function
 # TODO(machenbach): Coverage data from multiprocessing doesn't work.
 # TODO(majeski): Add some tests for the fuzzers.
 
+# for py2/py3 compatibility
+from __future__ import print_function
+
 import collections
 import contextlib
 import json
 import os
 import shutil
-import subprocess
 import sys
 import tempfile
 import unittest

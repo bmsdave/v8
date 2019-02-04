@@ -10,6 +10,7 @@ MB is a wrapper script for GN that can be used to generate build files
 for sets of canned configurations and analyze them.
 """
 
+# for py2/py3 compatibility
 from __future__ import print_function
 from past.builtins import cmp
 

@@ -12,13 +12,13 @@ Security considerations: The security key and request data must never be
 written to public logs. Public automated callers of this script should
 suppress stdout and stderr and only process contents of the results_file.
 """
-from __future__ import print_function
 
+# for py2/py3 compatibility
+from __future__ import print_function
 
 import argparse
 import httplib
 import json
-import os
 import re
 import sys
 import urllib
