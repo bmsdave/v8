@@ -714,7 +714,7 @@ class BaseTestRunner(object):
 
   def _prepare_procs(self, procs):
     procs = filter(None, procs)
-    for i in xrange(0, len(procs) - 1):
+    for i in range(0, len(procs) - 1):
       procs[i].connect_to(procs[i + 1])
     procs[0].setup()
 

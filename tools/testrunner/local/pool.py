@@ -154,7 +154,7 @@ class Pool():
       # Disable sigint and sigterm to prevent subprocesses from capturing the
       # signals.
       with without_sig():
-        for w in xrange(self.num_workers):
+        for w in range(self.num_workers):
           p = Process(target=Worker, args=(fn,
                                           self.work_queue,
                                           self.done_queue,

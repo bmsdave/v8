@@ -23,7 +23,7 @@ class TestSuite(testsuite.TestSuite):
       shell += ".exe"
 
     output = None
-    for i in xrange(3): # Try 3 times in case of errors.
+    for i in range(3): # Try 3 times in case of errors.
       cmd = command.Command(
         cmd_prefix=self.test_config.command_prefix,
         shell=shell,

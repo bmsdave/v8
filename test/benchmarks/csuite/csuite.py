@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
   benchmark_py_path = os.path.join(csuite_path, "benchmark.py")
   if not os.path.exists(benchmark_py_path):
-    print("Unable to find benchmark.py in " + output_path_base \
+    print("Unable to find benchmark.py in " + benchmark_py_path \
         + ". Aborting.")
     sys.exit(1)
 
@@ -83,7 +83,7 @@ if __name__ == '__main__':
       "compare-baseline.py")
 
   if not os.path.exists(compare_baseline_py_path):
-    print("Unable to find compare-baseline.py in " + output_path_base \
+    print("Unable to find compare-baseline.py in " + compare_baseline_py_path \
         + ". Aborting.")
     sys.exit(1)
 

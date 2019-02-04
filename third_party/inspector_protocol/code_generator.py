@@ -40,7 +40,7 @@ def read_config():
     def init_defaults(config_tuple, path, defaults):
         keys = list(config_tuple._fields)  # pylint: disable=E1101
         values = [getattr(config_tuple, k) for k in keys]
-        for i in xrange(len(keys)):
+        for i in range(len(keys)):
             if hasattr(values[i], "_fields"):
                 values[i] = init_defaults(values[i], path + "." + keys[i], defaults)
         for optional in defaults:

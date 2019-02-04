@@ -63,7 +63,7 @@ class CombinerProc(base.TestProc):
     self._send_next_test()
 
   def generate_initial_tests(self, num=1):
-    for _ in xrange(0, num):
+    for _ in range(0, num):
       self._send_next_test()
 
   def _send_next_test(self):
@@ -123,4 +123,4 @@ class TestGroups(object):
 
     group_key = rng.choice(self._keys)
     tests = self._groups[group_key]
-    return [rng.choice(tests) for _ in xrange(0, max_size)]
+    return [rng.choice(tests) for _ in range(0, max_size)]

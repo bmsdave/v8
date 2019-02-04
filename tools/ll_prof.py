@@ -159,7 +159,7 @@ class Code(object):
     # Print annotated lines.
     address = lines[0][0]
     total_count = 0
-    for i in xrange(len(lines)):
+    for i in range(len(lines)):
       start_offset = lines[i][0] - address
       if i == len(lines) - 1:
         end_offset = self.end_address - self.start_address
@@ -643,7 +643,7 @@ class TraceReader(object):
       return sample
     sample.ips = []
     offset += self.header_size + ctypes.sizeof(sample)
-    for _ in xrange(sample.nr):
+    for _ in range(sample.nr):
       sample.ips.append(
         self.ip_struct.from_buffer(self.trace, offset).value)
       offset += self.ip_size

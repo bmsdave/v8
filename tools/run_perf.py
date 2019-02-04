@@ -1077,7 +1077,7 @@ def Main(args):
         def Runner():
           """Output generator that reruns several times."""
           total_runs = runnable.run_count * options.run_count_multiplier
-          for i in xrange(0, max(1, total_runs)):
+          for i in range(0, max(1, total_runs)):
             # TODO(machenbach): Allow timeout per arch like with run_count per
             # arch.
             try:

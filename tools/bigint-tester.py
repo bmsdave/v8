@@ -295,7 +295,7 @@ def WrapRunOne(args):
   return RunOne(*args)
 def RunAll(args):
   for op in args.op:
-    for r in xrange(args.runs):
+    for r in range(args.runs):
       yield (op, args.num_inputs, args.binary)
 
 def Main():

@@ -139,11 +139,11 @@ def FullDump(reader, heap):
     if is_ascii is not False:
       # Output in the same format as the Unix hd command
       addr = start
-      for i in xrange(0, size, 16):
+      for i in range(0, size, 16):
         slot = i + location
         hex_line = ""
         asc_line = ""
-        for i in xrange(16):
+        for i in range(16):
           if slot + i < location + size:
             byte = ctypes.c_uint8.from_buffer(reader.minidump, slot + i).value
             if byte >= 0x20 and byte < 0x7f:
@@ -164,7 +164,7 @@ def FullDump(reader, heap):
       print("%s - %s" % (reader.FormatIntPtr(start),
                          reader.FormatIntPtr(start + size)))
       print(start + size + 1);
-      for i in xrange(0, size, reader.PointerSize()):
+      for i in range(0, size, reader.PointerSize()):
         slot = start + i
         maybe_address = reader.ReadUIntPtr(slot)
         heap_object = heap.FindObject(maybe_address)
@@ -617,7 +617,7 @@ class MinidumpReader(object):
     DebugPrint(self.header)
     directories = []
     offset = self.header.stream_directories_rva
-    for _ in xrange(self.header.stream_count):
+    for _ in range(self.header.stream_count):
       directories.append(MINIDUMP_DIRECTORY.Read(self.minidump, offset))
       offset += MINIDUMP_DIRECTORY.size
     self.arch = None
@@ -824,7 +824,7 @@ class MinidumpReader(object):
   def IsProbableASCIIRegion(self, location, length):
     ascii_bytes = 0
     non_ascii_bytes = 0
-    for i in xrange(length):
+    for i in range(length):
       loc = location + i
       byte = ctypes.c_uint8.from_buffer(self.minidump, loc).value
       if byte >= 0x7f:
@@ -846,7 +846,7 @@ class MinidumpReader(object):
   def IsProbableExecutableRegion(self, location, length):
     opcode_bytes = 0
     sixty_four = self.Is64()
-    for i in xrange(length):
+    for i in range(length):
       loc = location + i
       byte = ctypes.c_uint8.from_buffer(self.minidump, loc).value
       if (byte == 0x8b or           # mov
@@ -895,7 +895,7 @@ class MinidumpReader(object):
   def FindWord(self, word, alignment=0):
     def search_inside_region(reader, start, size, location):
       location = (location + alignment) & ~alignment
-      for i in xrange(size - self.PointerSize()):
+      for i in range(size - self.PointerSize()):
         loc = location + i
         if reader._ReadWord(loc) == word:
           slot = start + (loc - location)
@@ -907,7 +907,7 @@ class MinidumpReader(object):
     aligned_res = []
     unaligned_res = []
     def search_inside_region(reader, start, size, location):
-      for i in xrange(size - self.PointerSize()):
+      for i in range(size - self.PointerSize()):
         loc = location + i
         if reader._ReadWord(loc) == word:
           slot = start + (loc - location)
@@ -1430,7 +1430,7 @@ class FixedArray(HeapObject):
     p.Indent()
     p.Print("length: %d" % self.length)
     base_offset = self.ElementsOffset()
-    for i in xrange(self.length):
+    for i in range(self.length):
       offset = base_offset + 4 * i
       try:
         p.Print("[%08d] = %s" % (i, self.ObjectField(offset)))
@@ -1500,7 +1500,7 @@ class DescriptorArray(object):
     p.Print("Descriptors(%08x, length=%d)" % (array.address, length))
     p.Print("[et] %s" % (array.Get(1)))
 
-    for di in xrange(length):
+    for di in range(length):
       i = 2 + di * 3
       p.Print("0x%x" % (array.address + array.MemberOffset(i)))
       p.Print("[%i] name:    %s" % (di, array.Get(i + 0)))
@@ -1545,7 +1545,7 @@ class TransitionArray(object):
     if prototype is not None:
       p.Print("[prototype  ] %s" % (prototype))
 
-    for di in xrange(length):
+    for di in range(length):
       i = 3 + di * 2
       p.Print("[%i] symbol: %s" % (di, array.Get(i + 0)))
       p.Print("[%i] target: %s" % (di, array.Get(i + 1)))
@@ -1943,10 +1943,10 @@ class InspectionInfo(object):
         exception_thread.stack.memory.data_size
     frame_pointer = self.reader.ExceptionFP()
     self.styles[frame_pointer] = "frame"
-    for slot in xrange(stack_top, stack_bottom, self.reader.PointerSize()):
+    for slot in range(stack_top, stack_bottom, self.reader.PointerSize()):
       # stack address
       self.styles[slot] = "sa"
-    for slot in xrange(stack_top, stack_bottom, self.reader.PointerSize()):
+    for slot in range(stack_top, stack_bottom, self.reader.PointerSize()):
       maybe_address = self.reader.ReadUIntPtr(slot)
       # stack value
       self.styles[maybe_address] = "sv"
@@ -2097,7 +2097,7 @@ class InspectionPadawan(object):
   def FindFirstAsciiString(self, start, end=None, min_length=32):
     """ Walk the memory until we find a large string """
     if not end: end = start + 64
-    for slot in xrange(start, end):
+    for slot in range(start, end):
       if not self.reader.IsValidAddress(slot): break
       message = self.reader.ReadAsciiString(slot)
       if len(message) > min_length:
@@ -2115,7 +2115,7 @@ class InspectionPadawan(object):
     if not self.reader.IsValidAddress(start): return start
     end = start + ptr_size * 1024 * 4
     magic1 = None
-    for slot in xrange(start, end, ptr_size):
+    for slot in range(start, end, ptr_size):
       if not self.reader.IsValidAddress(slot + ptr_size): break
       magic1 = self.reader.ReadUIntPtr(slot)
       magic2 = self.reader.ReadUIntPtr(slot + ptr_size)
@@ -2156,7 +2156,7 @@ class InspectionPadawan(object):
 
   def FindPtr(self, expected_value, start, end):
     ptr_size = self.reader.PointerSize()
-    for slot in xrange(start, end, ptr_size):
+    for slot in range(start, end, ptr_size):
       if not self.reader.IsValidAddress(slot): return None
       value = self.reader.ReadUIntPtr(slot)
       if value == expected_value: return slot
@@ -2281,7 +2281,7 @@ class InspectionPadawan(object):
     free_space_end = 0
     ptr_size = self.reader.PointerSize()
 
-    for slot in xrange(start, end, ptr_size):
+    for slot in range(start, end, ptr_size):
       if not self.reader.IsValidAddress(slot):
         print("%s: Address is not contained within the minidump!" % slot)
         return
@@ -2703,7 +2703,7 @@ class InspectionWebFormatter(object):
     stack_bottom = exception_thread.stack.start + \
         exception_thread.stack.memory.data_size
     stack_map = {self.reader.ExceptionIP(): -1}
-    for slot in xrange(stack_top, stack_bottom, self.reader.PointerSize()):
+    for slot in range(stack_top, stack_bottom, self.reader.PointerSize()):
       maybe_address = self.reader.ReadUIntPtr(slot)
       if not maybe_address in stack_map:
         stack_map[maybe_address] = slot
@@ -2855,7 +2855,7 @@ class InspectionWebFormatter(object):
     if details == InspectionWebFormatter.CONTEXT_FULL:
       if self.reader.exception.exception.parameter_count > 0:
         f.write("&nbsp;&nbsp; Exception parameters: ")
-        for i in xrange(0, self.reader.exception.exception.parameter_count):
+        for i in range(0, self.reader.exception.exception.parameter_count):
           f.write("%08x" % self.reader.exception.exception.information[i])
         f.write("<br><br>")
 
@@ -2931,19 +2931,19 @@ class InspectionWebFormatter(object):
     f.write('<div class="code">')
     f.write("<table class=codedump>")
 
-    for j in xrange(0, end_address - start_address, size):
+    for j in range(0, end_address - start_address, size):
       slot = start_address + j
       heap_object = ""
       maybe_address = None
       end_region = region[0] + region[1]
       if slot < region[0] or slot + size > end_region:
         straddress = "0x"
-        for i in xrange(end_region, slot + size):
+        for i in range(end_region, slot + size):
           straddress += "??"
         for i in reversed(
-            xrange(max(slot, region[0]), min(slot + size, end_region))):
+            range(max(slot, region[0]), min(slot + size, end_region))):
           straddress += "%02x" % self.reader.ReadU8(i)
-        for i in xrange(slot, region[0]):
+        for i in range(slot, region[0]):
           straddress += "??"
       else:
         maybe_address = self.reader.ReadUIntPtr(slot)
@@ -3005,7 +3005,7 @@ class InspectionWebFormatter(object):
 
     start = self.align_down(start_address, line_width)
 
-    for i in xrange(end_address - start):
+    for i in range(end_address - start):
       address = start + i
       if address % 64 == 0:
         if address != start:
@@ -3075,7 +3075,7 @@ class InspectionWebFormatter(object):
             (start_address, end_address, highlight_address, expand))
     f.write('<div class="code">')
     f.write("<table class=\"codedump\">");
-    for i in xrange(len(lines)):
+    for i in range(len(lines)):
       line = lines[i]
       next_address = count
       if i + 1 < len(lines):
@@ -3819,7 +3819,7 @@ def AnalyzeMinidump(options, minidump_name):
   stack_top = reader.ExceptionSP()
   stack_bottom = reader.StackBottom()
   stack_map = {reader.ExceptionIP(): -1}
-  for slot in xrange(stack_top, stack_bottom, reader.PointerSize()):
+  for slot in range(stack_top, stack_bottom, reader.PointerSize()):
     maybe_address = reader.ReadUIntPtr(slot)
     if not maybe_address in stack_map:
       stack_map[maybe_address] = slot

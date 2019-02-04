@@ -91,7 +91,7 @@ class TestCase(testcase.D8TestCase):
     files = [os.path.join(self.suite.root, "mozilla-shell-emulation.js")]
     testfilename = self.path + ".js"
     testfilepath = testfilename.split("/")
-    for i in xrange(len(testfilepath)):
+    for i in range(len(testfilepath)):
       script = os.path.join(self.suite.testroot,
                             reduce(os.path.join, testfilepath[:i], ""),
                             "shell.js")
