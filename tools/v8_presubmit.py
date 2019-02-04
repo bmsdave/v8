@@ -51,9 +51,7 @@ import subprocess
 import multiprocessing
 from subprocess import PIPE
 
-from .testrunner.local import statusfile
-from .testrunner.local import testsuite
-from .testrunner.local import utils
+from testrunner.local import statusfile
 
 # Special LINT rules diverging from default and reason.
 # build/header_guard: Our guards have the form "V8_FOO_H_", not "SRC_FOO_H_".

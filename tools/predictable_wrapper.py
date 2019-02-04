@@ -20,8 +20,8 @@ from __future__ import absolute_import
 
 import sys
 
-from .testrunner.local import command
-from .testrunner.local import utils
+from testrunner.local import command
+from testrunner.local import utils
 
 MAX_TRIES = 3
 TIMEOUT = 120

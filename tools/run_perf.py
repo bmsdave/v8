@@ -103,6 +103,7 @@ The test flags are passed to the js test file after '--'.
 from __future__ import print_function
 from __future__ import absolute_import
 from past.builtins import basestring
+from functools import reduce
 
 from collections import OrderedDict
 import json
@@ -115,10 +116,9 @@ import subprocess
 import sys
 import traceback
 
-from .testrunner.local import android
-from .testrunner.local import command
-from .testrunner.local import utils
-from functools import reduce
+from testrunner.local import android
+from testrunner.local import command
+from testrunner.local import utils
 
 ARCH_GUESS = utils.DefaultArch()
 SUPPORTED_ARCHS = ["arm",
