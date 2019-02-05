@@ -8,11 +8,13 @@ Presubmit checks for the validity of V8-side test specifications in pyl files.
 For simplicity, we check all pyl files on any changes in this folder.
 """
 
-# for py2/py3 compatibility
-from past.builtins import basestring
-
 import ast
 import os
+
+try:
+  basestring       # Python 2
+except NameError:  # Python 3
+  basestring = (str, )
 
 SUPPORTED_BUILDER_SPEC_KEYS = [
   'swarming_dimensions',
