@@ -10,6 +10,7 @@ from __future__ import absolute_import
 from functools import reduce
 
 import os
+import re
 import sys
 
 # Adds testrunner to the path hence it has to be imported at the beggining.
@@ -21,8 +22,10 @@ from testrunner.objects import predictable
 from testrunner.testproc.execution import ExecutionProc
 from testrunner.testproc.filter import StatusFileFilterProc, NameFilterProc
 from testrunner.testproc.loader import LoadProc
+from testrunner.testproc.progress import ResultsTracker
 from testrunner.testproc.seed import SeedProc
 from testrunner.testproc.variant import VariantProc
+from testrunner.utils import random_utils
 
 
 ARCH_GUESS = utils.DefaultArch()

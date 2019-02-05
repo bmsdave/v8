@@ -4,6 +4,7 @@
 
 # for py2/py3 compatibility
 from __future__ import print_function
+from functools import reduce
 
 from collections import OrderedDict
 import json
@@ -13,7 +14,7 @@ import os
 import shlex
 import sys
 import traceback
-from functools import reduce
+
 
 
 # Add testrunner to the path.

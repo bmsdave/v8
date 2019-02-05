@@ -19,7 +19,9 @@ import json
 import math
 from argparse import ArgumentParser
 import os
+import shutil
 import sys
+import tempfile
 
 PERCENT_CONSIDERED_SIGNIFICANT = 0.5
 PROBABILITY_CONSIDERED_SIGNIFICANT = 0.02

@@ -15,6 +15,7 @@ import time
 
 from ..local.android import (
     android_driver, CommandFailedException, TimeoutException)
+from ..local import utils
 from ..objects import output
 
 

@@ -6,6 +6,7 @@
 # for py2/py3 compatibility
 from __future__ import print_function
 
+import os
 import os.path
 import signal
 import subprocess

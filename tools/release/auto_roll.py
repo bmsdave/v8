@@ -6,6 +6,8 @@
 # for py2/py3 compatibility
 from __future__ import print_function
 
+import argparse
+import os
 import sys
 
 from common_includes import *

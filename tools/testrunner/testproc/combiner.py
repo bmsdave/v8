@@ -5,11 +5,12 @@
 # for py2/py3 compatibility
 from __future__ import print_function
 
-
 from collections import defaultdict
+import time
 
 from . import base
-
+from ..objects import testcase
+from ..outproc import base as outproc
 
 class CombinerProc(base.TestProc):
   def __init__(self, rng, min_group_size, max_group_size, count):

@@ -29,6 +29,7 @@
 from __future__ import print_function
 
 import os
+import shutil
 
 from testrunner.local import command
 from testrunner.local import testsuite

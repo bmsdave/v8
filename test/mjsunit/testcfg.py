@@ -33,6 +33,7 @@ import itertools
 import os
 import re
 
+from testrunner.local import statusfile
 from testrunner.local import testsuite
 from testrunner.objects import testcase
 from testrunner.outproc import base as outproc

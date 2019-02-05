@@ -15,6 +15,7 @@ Raw gyp values are supported - they will be tranformed into valid json.
 from __future__ import print_function
 
 import json
+import os
 import sys
 
 assert len(sys.argv) > 2

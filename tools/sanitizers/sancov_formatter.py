@@ -41,6 +41,7 @@ directory. It's not checked out by default and must be added as a custom deps:
 
 # for py2/py3 compatibility
 from __future__ import print_function
+from functools import reduce
 
 import argparse
 import json
@@ -51,7 +52,6 @@ import subprocess
 import sys
 
 from multiprocessing import Pool, cpu_count
-from functools import reduce
 
 
 logging.basicConfig(level=logging.INFO)

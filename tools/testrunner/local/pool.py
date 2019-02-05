@@ -11,6 +11,7 @@ from contextlib import contextmanager
 from multiprocessing import Process, Queue
 import os
 import signal
+import time
 import traceback
 
 from . import command

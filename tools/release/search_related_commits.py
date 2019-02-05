@@ -7,6 +7,8 @@
 from __future__ import print_function
 
 import argparse
+import operator
+import os
 import re
 from sets import Set
 from subprocess import Popen, PIPE
