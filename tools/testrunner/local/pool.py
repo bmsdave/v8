@@ -12,6 +12,7 @@ import os
 import signal
 import time
 import traceback
+from Queue import Empty
 
 from . import command
 
@@ -24,6 +25,7 @@ def setup_testing():
   global Process
   del Queue
   del Process
+  from Queue import Queue
 
   from threading import Thread as Process
   # Monkeypatch threading Queue to look like multiprocessing Queue.
