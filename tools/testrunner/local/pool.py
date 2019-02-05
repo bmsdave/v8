@@ -13,9 +13,9 @@ import time
 import traceback
 
 try:
-  from queue import Empty  # Python 3
+  from queue import Empty, Queue  # Python 3
 except ImportError:
-  from Queue import Empty  # Python 2
+  from Queue import Empty, Queue  # Python 2
 
 from . import command
 
