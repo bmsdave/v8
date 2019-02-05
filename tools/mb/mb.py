@@ -12,7 +12,7 @@ for sets of canned configurations and analyze them.
 
 # for py2/py3 compatibility
 from __future__ import absolute_import
-from past.builtins import cmp
+from __future__ import print_function
 
 import argparse
 import ast
@@ -37,6 +37,12 @@ CHROMIUM_SRC_DIR = os.path.dirname(os.path.dirname(os.path.dirname(
 sys.path = [os.path.join(CHROMIUM_SRC_DIR, 'build')] + sys.path
 
 import gn_helpers
+
+try:
+  cmp             # Python 2
+except NameError:
+  def cmp(x, y):  # Python 3
+    return (x > y) - (x < y)
 
 
 def main(args):

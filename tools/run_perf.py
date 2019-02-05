@@ -102,7 +102,6 @@ The test flags are passed to the js test file after '--'.
 # for py2/py3 compatibility
 from __future__ import print_function
 from __future__ import absolute_import
-from past.builtins import basestring
 from functools import reduce
 
 from collections import OrderedDict
@@ -119,6 +118,11 @@ import traceback
 from testrunner.local import android
 from testrunner.local import command
 from testrunner.local import utils
+
+try:
+  basestring       # Python 2
+except NameError:  # Python 3
+  basestring = (str, )
 
 ARCH_GUESS = utils.DefaultArch()
 SUPPORTED_ARCHS = ["arm",

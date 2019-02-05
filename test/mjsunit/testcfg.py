@@ -25,9 +25,6 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# for py2/py3 compatibility
-from past.builtins import basestring
-
 from collections import OrderedDict
 import itertools
 import os
@@ -37,6 +34,11 @@ from testrunner.local import statusfile
 from testrunner.local import testsuite
 from testrunner.objects import testcase
 from testrunner.outproc import base as outproc
+
+try:
+  basestring       # Python 2
+except NameError:  # Python 3
+  basestring = (str, )
 
 FILES_PATTERN = re.compile(r"//\s+Files:(.*)")
 ENV_PATTERN = re.compile(r"//\s+Environment Variables:(.*)")
