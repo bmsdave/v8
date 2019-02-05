@@ -32,8 +32,8 @@ from __future__ import absolute_import
 import os
 import re
 
-from .variants import ALL_VARIANTS
-from .utils import Freeze
+from variants import ALL_VARIANTS
+from utils import Freeze
 
 # Possible outcomes
 FAIL = "FAIL"
