@@ -6,7 +6,7 @@
 # for py2/py3 compatibility
 try:
   from queue import Queue # Python 3
-except NameError:
+except ImportError:
   from Queue import Queue # Python 2
 
 import os
