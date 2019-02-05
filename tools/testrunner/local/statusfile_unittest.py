@@ -8,7 +8,7 @@ from __future__ import absolute_import
 
 import unittest
 
-from . import statusfile
+import statusfile
 from .utils import Freeze
 
 
