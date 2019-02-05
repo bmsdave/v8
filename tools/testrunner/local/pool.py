@@ -8,6 +8,7 @@ from __future__ import print_function
 
 from Queue import Empty
 from contextlib import contextmanager
+from multiprocessing import Process, Queue
 import os
 import signal
 import traceback
