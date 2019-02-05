@@ -12,7 +12,11 @@ import os
 import signal
 import time
 import traceback
-from Queue import Empty
+
+try:
+  from queue import Empty, Queue  # Python 3
+except ImportError:
+  from Queue import Empty, Queue  # Python 2
 
 from . import command
 
@@ -25,7 +29,10 @@ def setup_testing():
   global Process
   del Queue
   del Process
-  from Queue import Queue
+  try:
+    from queue import Queue  # Python 3
+  except ImportError:
+    from Queue import Queue  # Python 2
 
   from threading import Thread as Process
   # Monkeypatch threading Queue to look like multiprocessing Queue.
