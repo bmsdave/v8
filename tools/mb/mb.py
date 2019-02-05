@@ -39,9 +39,9 @@ sys.path = [os.path.join(CHROMIUM_SRC_DIR, 'build')] + sys.path
 import gn_helpers
 
 try:
-  cmp             # Python 2
-except NameError:
-  def cmp(x, y):  # Python 3
+  cmp              # Python 2
+except NameError:  # Python 3 
+  def cmp(x, y):   # pylint: disable=redefined-builtin
     return (x > y) - (x < y)
 
 
