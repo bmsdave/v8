@@ -3,6 +3,12 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+# for py2/py3 compatibility
+try:
+  from queue import Queue # Python 3
+except NameError:
+  from Queue import Queue # Python 2
+
 import os
 import sys
 import unittest
