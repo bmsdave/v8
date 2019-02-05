@@ -11,7 +11,7 @@ for sets of canned configurations and analyze them.
 """
 
 # for py2/py3 compatibility
-from __future__ import print_function
+from __future__ import absolute_import
 from past.builtins import cmp
 
 import argparse
