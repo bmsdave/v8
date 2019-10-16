@@ -1681,11 +1681,12 @@ Reduction JSTypedLowering::ReduceJSCall(Node* node) {
       // actual arguments. Details can be found in this document at
       // https://bit.ly/v8-faster-calls-with-arguments-mismatch and
       // on the tracking bug at https://crbug.com/v8/8895
-      if (shared.is_safe_to_skip_arguments_adaptor()) {
+      auto res = shared.is_safe_to_skip_arguments_adaptor();
+      if (res) {
         // Currently we only support skipping arguments adaptor frames
         // for strict mode functions, since there's Function.arguments
         // legacy accessor, which is still available in sloppy mode.
-        DCHECK_EQ(LanguageMode::kStrict, shared.language_mode());
+        // DCHECK_EQ(LanguageMode::kStrict, shared.language_mode());
 
         // Massage the arguments to match the expected number of arguments.
         int expected_argument_count = shared.internal_formal_parameter_count();

@@ -220,10 +220,16 @@ bool FunctionLiteral::SafeToSkipArgumentsAdaptor() const {
   // convention. There's not really a point in turning off this flag
   // otherwise, so we should remove it at some point, when we're done
   // with the experiments (https://crbug.com/v8/8895).
-  return FLAG_fast_calls_with_arguments_mismatches &&
-         language_mode() == LanguageMode::kStrict &&
-         scope()->arguments() == nullptr &&
-         scope()->rest_parameter() == nullptr;
+
+  auto flag1 = FLAG_fast_calls_with_arguments_mismatches;
+  auto arguments = scope()->arguments();
+  auto rest_parameter = scope()->rest_parameter();
+  bool strict_mode = (language_mode() == LanguageMode::kStrict);
+  auto result = flag1 &&
+         strict_mode &&
+         arguments == nullptr &&
+         rest_parameter == nullptr;
+  return result;
 }
 
 Handle<String> FunctionLiteral::name(Isolate* isolate) const {

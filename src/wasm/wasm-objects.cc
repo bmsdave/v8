@@ -1929,6 +1929,7 @@ Handle<WasmExportedFunction> WasmExportedFunction::New(
   DCHECK_EQ(is_asm_js_module, js_function->IsConstructor());
   js_function->shared()->set_length(arity);
   js_function->shared()->set_internal_formal_parameter_count(arity);
+  js_function->shared()->set_is_safe_to_skip_arguments_adaptor(true);
   return Handle<WasmExportedFunction>::cast(js_function);
 }
 
